@@ -69,18 +69,19 @@ function createBoard() {
 
 // Check for marches
 function checkForMatch() {
-  var card = document.querySelectorAll('img');
-  console.log(cardsChosen)
+  var cards = document.querySelectorAll('img');
+  console.log(cardsChosenId)
   const optionOneId = cardsChosenId[0];
   const optionTwoId = cardsChosenId[1];
-  if (optionOneId === optionTwoId){
+  if (cardsChosenId[0] === cardsChosenId[1]){
     alert('You found a match!!');
-    card[optionOneId].setAttribute('scr', 'images/white.jpg');
-    card[optionTwoId].setAttribute('scr', 'images/white.jpg');
+    cards[optionOneId].setAttribute('scr', 'images/white.jpg');
+    cards[optionTwoId].setAttribute('scr', 'images/white.jpg');
     cardsWon.push(cardsChosen);
   } else {
-    card[optionOneId].setAttribute('src', 'images/blank.jpg');
-    card[optionTwoId].setAttribute('src', 'images/blank.jpg');
+    cards[optionOneId].setAttribute('src', 'images/blank.jpg');
+    cards[optionTwoId].setAttribute('src', 'images/blank.jpg');
+    alert('Sorry, try again');
   }
   cardsChosenId = [];
   cardsWon = [];
@@ -91,6 +92,7 @@ function checkForMatch() {
 function flipCard() {
   var cardId = this.getAttribute('data-id');
   cardsChosen.push(cardArray[cardId].name); 
+  console.log(cardId)
   cardsChosenId.push(cardId);
   this.setAttribute('src', cardArray[cardId].img);
   if (cardsChosen.length === 2) {
