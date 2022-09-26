@@ -75,13 +75,12 @@ function checkForMatch() {
   const optionTwoId = cardsChosenId[1];
   if (optionOneId === optionTwoId){
     alert('You found a match!!');
-    card[optionOneId].setAttribute('img', 'images/white.jpg');
-    card[optionTwoId].setAttribute('img', 'images/white.jpg');
+    card[optionOneId].setAttribute('scr', 'images/white.jpg');
+    card[optionTwoId].setAttribute('scr', 'images/white.jpg');
     cardsWon.push(cardsChosen);
   } else {
-    card[optionOneId].setAttribute('img', 'images/blank.jpg');
-    card[optionTwoId].setAttribute('img', 'images/blank.jpg');
-    alert('Sorry, try again')
+    card[optionOneId].setAttribute('src', 'images/blank.jpg');
+    card[optionTwoId].setAttribute('src', 'images/blank.jpg');
   }
   cardsChosenId = [];
   cardsWon = [];
