@@ -1,6 +1,13 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
-  height: 300px;
+  width: 830px;
+  height: 620px;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+img {
+  width: 200px;
+    height: 200px;
 }

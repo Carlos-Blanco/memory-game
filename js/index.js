@@ -40,6 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Ten',
       img: 'images/10.jpg'
+    },
+    {
+      name: 'Eleven',
+      img: 'images/11.jpg'
+    },
+    {
+      name: 'Twelve',
+      img: 'images/12.jpg'
     }
   ]
 
@@ -56,5 +64,7 @@ function createBoard() {
     grid.appendChild(card);
   }
 }
+
+createBoard();
 
 })
