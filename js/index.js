@@ -83,8 +83,8 @@ function checkForMatch() {
     cards[optionTwoId].setAttribute('src', 'images/blank.jpg');
     alert('Sorry, try again');
   }
+  cardsChosen = [];
   cardsChosenId = [];
-  cardsWon = [];
 }
 
 
