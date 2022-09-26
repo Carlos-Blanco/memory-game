@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
 const grid = document.querySelector('.grid');
-var cardChosen = [];
-var cardChosenId = [];
+var cardsChosen = [];
+var cardsChosenId = [];
 
 //Create board
 function createBoard() {
@@ -72,9 +72,12 @@ function createBoard() {
 //flip the card
 function flipCard() {
   var cardId = this.getAttribute('data-id');
-  cardChosen.push(cardArray[cardId].name);
-  cardChosenId.push(cardId);
-  this.setAttribute('src', cardArray);
+  cardsChosen.push(cardArray[cardId].name);
+  cardsChosenId.push(cardId);
+  this.setAttribute('src', cardArray[cardId].img);
+  if (cardsChoser === 2) {
+    setTimeout(checkForMatch, 500);
+  }
 }
 
 
