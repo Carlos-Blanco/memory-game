@@ -99,9 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
 const grid = document.querySelector('.grid');
+var resultDisplay = document.querySelector('#result');
+var totalMoves = document.querySelector('#moves');
 var cardsChosen = [];
 var cardsChosenId = [];
 var cardsWon = [];
+var move = 0;
 
 //Create board
 function createBoard() {
@@ -120,17 +123,21 @@ function checkForMatch() {
   const optionOneId = cardsChosenId[0];
   const optionTwoId = cardsChosenId[1];
   if (cardsChosen[0] === cardsChosen[1]){
-    alert('You found a match!!');
     cards[optionOneId].setAttribute('src', 'images/white.jpg');
     cards[optionTwoId].setAttribute('src', 'images/white.jpg');
     cardsWon.push(cardsChosen);
   } else {
     cards[optionOneId].setAttribute('src', 'images/blank.jpg');
     cards[optionTwoId].setAttribute('src', 'images/blank.jpg');
-    alert('Sorry, try again');
   }
+  move = move + 1;
   cardsChosen = [];
   cardsChosenId = [];
+  resultDisplay.textContent = cardsWon.length;
+  totalMoves.textContent = move;
+  if (cardsWon.length === cardArray.length/2) {
+    resultDisplay.textContent = 'Congratulations!! You won the game in ' + moves + ' moves';
+  }
 }
 
 
