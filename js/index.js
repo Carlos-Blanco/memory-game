@@ -52,18 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
 const grid = document.querySelector('.grid');
+var cardChosen = [];
+var cardChosenId = [];
 
 //Create board
-
 function createBoard() {
   for (let index = 0; index < cardArray.length; index++) {
     var card = document.createElement('img');
     card.setAttribute('src', 'images/blank.jpg');
     card.setAttribute('data-id', index);
-    // card.addEventListener('click', flipCard);
+    card.addEventListener('click', flipCard);
     grid.appendChild(card);
   }
 }
+
+// Check for marches
+
+
+//flip the card
+function flipCard() {
+  var cardId = this.getAttribute('data-id');
+  cardChosen.push(cardArray[cardId].name);
+  cardChosenId.push(cardId);
+  this.setAttribute('src', cardArray);
+}
+
+
 
 createBoard();
 
