@@ -2,12 +2,20 @@
   display: flex;
   flex-wrap: wrap;
   width: 1250px;
-  height: 620px;
-  gap: 10px;
+  height: 470px;
+  gap: 5px;
   margin: 20px auto;
+  justify-content: center;
 }
 
 img {
-  width: 200px;
-    height: 200px;
+  width: 150px;
+    height: 150px;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
 }

@@ -98,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ]
 
+cardArray.sort(() => 0.5 - Math.random());
+
 const grid = document.querySelector('.grid');
 var resultDisplay = document.querySelector('#result');
 var totalMoves = document.querySelector('#moves');
@@ -136,7 +138,7 @@ function checkForMatch() {
   resultDisplay.textContent = cardsWon.length;
   totalMoves.textContent = move;
   if (cardsWon.length === cardArray.length/2) {
-    resultDisplay.textContent = 'Congratulations!! You won the game in ' + moves + ' moves';
+    grid.textContent = 'Congratulations!! You found them all in ' + move + ' moves';
   }
 }
 
